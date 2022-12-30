@@ -1,0 +1,10 @@
+@tailwind base;
+
+@layer base {
+  body {
+    @apply font-commissioner;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
