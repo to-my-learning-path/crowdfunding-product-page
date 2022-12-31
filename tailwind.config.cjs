@@ -8,9 +8,6 @@ module.exports = {
       black: "hsl(0, 0%, 0%)",
       darkGray: "hsl(0, 0%, 48%)",
     },
-    fontSize: {
-      default: "16px",
-    },
     fontFamily: {
       commissioner: ["Commissioner", "sans-serif"],
     },

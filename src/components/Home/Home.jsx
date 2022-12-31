@@ -1,4 +1,6 @@
 import React from "react";
+import MastercraftIcon from ".././.././assets/images/logo-mastercraft.svg";
+import BookmarkIcon from "../../assets/images/icon-bookmark.svg";
 
 const list = [
   {
@@ -26,18 +28,26 @@ const list = [
 
 const Home = () => {
   return (
-    <main>
-      <section>
-        <img src="" alt="" />
-        <h1>Mastercraft Bamboo Monitor Riser</h1>
-        <p>
+    <main className=" mx-8 mt-16 space-y-8 bg-[#dacece]">
+      <section className=" relative bg-[#fff] rounded-lg p-8 text-center space-y-6">
+        <img
+          className=" mx-auto absolute -translate-y-14 translate-x-28"
+          src={MastercraftIcon}
+          alt=""
+        />
+        <h1 className=" text-xl px-8 font-700 -mt-14">
+          Mastercraft Bamboo Monitor Riser
+        </h1>
+        <p className=" text-darkGray">
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </p>
-        <div>
-          <button>Back this project</button>
+        <div className=" flex justify-between gap-2">
+          <button className=" bg-moderateCyan hover:bg-darkCyan text-[#fff] py-3 px-4 w-full font-500 rounded-full">
+            Back this project
+          </button>
           <button>
-            <img src="" alt="" />
-            <p>Bookmark</p>
+            <img className=" hover:opacity-80" src={BookmarkIcon} alt="" />
+            <p className=" hidden md:block">Bookmark</p>
           </button>
         </div>
       </section>
