@@ -14,7 +14,7 @@ const Header = () => {
         {isOpen ? <img src={CloseIcon} alt="" /> : <img src={OpenIcon} />}
       </button>
       <Backdrop
-        className=" absolute min-h-screen"
+        className=" absolute min-h-screen z-10"
         open={isOpen}
         onClick={() => setIsOpen(false)}
       >

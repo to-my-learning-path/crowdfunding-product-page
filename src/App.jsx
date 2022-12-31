@@ -9,7 +9,7 @@ import HeroImageDesktop from "./assets/images/image-hero-desktop.jpg";
 function App() {
   return (
     <div
-      className={` bg-[url("./assets/images/image-hero-mobile.jpg")] md:bg-[url("./assets/images/image-hero-desktop.jpg")] bg-no-repeat bg-contain`}
+      className={` bg-[url("./assets/images/image-hero-mobile.jpg")] bg-[#fafafa] md:bg-[url("./assets/images/image-hero-desktop.jpg")] bg-no-repeat bg-contain`}
     >
       <Header />
       <Home />
