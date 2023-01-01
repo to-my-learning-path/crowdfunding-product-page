@@ -17,9 +17,9 @@ This is a solution to the [Crowdfunding product page challenge on Frontend Mento
 
 ### Screenshot
 
-<!-- ![Desktop View](./screenshot/screenshot_1.png)
+![Desktop View](./screenshot/screenshot_1.png)
 ![Mobile View](./screenshot/screenshot_2.png)
-![Mobile View with menu](./screenshot/screenshot_3.png) -->
+![Mobile View with menu](./screenshot/screenshot_3.png)
 
 ### Links
 
@@ -33,9 +33,14 @@ This is a solution to the [Crowdfunding product page challenge on Frontend Mento
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid
 - Mobile-First Approach
+- React
+- Material UI
 
 ### What I learned
+
+I learned how to create a model with Material UI
 
 ## Author
 
