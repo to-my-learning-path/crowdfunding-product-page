@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import MastercraftIcon from ".././.././assets/images/logo-mastercraft.svg";
 import BookmarkIcon from "../../assets/images/icon-bookmark.svg";
 import CloseIcon from "../../assets/images/icon-close-modal.svg";
-import { Divider, useMediaQuery, LinearProgress, Modal } from "@mui/material";
+import {
+  Divider,
+  useMediaQuery,
+  LinearProgress,
+  Modal,
+  Radio,
+} from "@mui/material";
 
 const list = [
   {
+    id: 0,
     title: "Bamboo Stand",
     price: 25,
     description:
@@ -13,6 +20,7 @@ const list = [
     amount: 101,
   },
   {
+    id: 1,
     title: "Black Edition Stand",
     price: 75,
     description:
@@ -20,6 +28,7 @@ const list = [
     amount: 64,
   },
   {
+    id: 2,
     title: "Mahogany Special Edition",
     price: 200,
     description:
@@ -178,6 +187,7 @@ const Home = () => {
                 price={item.price}
                 description={item.description}
                 amount={item.amount}
+                id={item.id}
               />
             ))}
           </div>
@@ -217,25 +227,44 @@ const RewardList = ({ title, price, description, amount }) => {
   );
 };
 
-const ModelItemList = ({ title, price, description, amount }) => {
+const ModelItemList = ({ title, price, description, amount, id }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
+  const handleChange = (event) => {
+    setSelectedValue(Number(event.target.value));
+  };
+
   return (
     <div
       className={` ${
         amount > 0 ? "" : "opacity-60 cursor-not-allowed"
-      } border-[1px] border-darkGray text-left p-6 space-y-4 rounded-lg`}
+      } border-[1px] border-darkGray p-6 rounded-lg grid grid-cols-[1fr_3fr] items-start`}
     >
-      <div className=" md:flex md:justify-between md:items-center">
-        <p className="text-xl font-700 ">{title}</p>
-        <p className=" text-moderateCyan font-500">Pledge ${price} or more</p>
+      <div>
+        <input
+          type="radio"
+          disabled={amount > 0 ? false : true}
+          className=" w-8 h-8 accent-moderateCyan"
+          name="id"
+          value={id}
+          defaultChecked={selectedValue === id}
+          onChange={handleChange}
+        />
       </div>
-      <p className=" text-darkGray">{description}</p>
-      <div className=" space-y-4 md:flex md:justify-between md:items-center">
-        <p className=" flex items-center gap-2">
-          <span className=" text-3xl font-700">{amount}</span> left
-        </p>
-        <button className=" bg-moderateCyan hover:bg-darkCyan text-[#fff] py-3 px-8 font-500 rounded-full">
-          Select Reward
-        </button>
+      <div className=" space-y-4 text-left">
+        <div className=" md:flex md:justify-between md:items-center">
+          <p className="text-xl font-700 ">{title}</p>
+          <p className=" text-moderateCyan font-500">Pledge ${price} or more</p>
+        </div>
+        <p className=" text-darkGray">{description}</p>
+        <div className=" space-y-4 md:flex md:justify-between md:items-center">
+          <p className=" flex items-center gap-2">
+            <span className=" text-3xl font-700">{amount}</span> left
+          </p>
+          <button className=" bg-moderateCyan hover:bg-darkCyan text-[#fff] py-3 px-8 font-500 rounded-full">
+            Select Reward
+          </button>
+        </div>
       </div>
     </div>
   );
